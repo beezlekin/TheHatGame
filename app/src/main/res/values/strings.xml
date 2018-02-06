@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TheHatGame</string>
+    <string name="Title">The Hat Game</string>
+    <string name="Button_Play">Play</string>
+    <string name="Button_Rules">Rules</string>
+    <string name="Button_Single_Phone">Single Phone Game</string>
+    <string name="Button_Multi_Phone">Multiphone Game</string>
+    <string name="Button_Send">Send</string>
+    <string name="Text_Rules">The rules of the game go here. Does this multiline or do i need to use a different thing.</string>
+    <string name="Text_passcode">Enter a passcode</string>
+</resources>

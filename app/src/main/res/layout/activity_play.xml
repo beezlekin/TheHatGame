@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.beez.thehatgame.PlayActivity">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Button_Multi_Phone"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Button_Single_Phone"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textCapCharacters"
+        android:text="@string/Text_passcode"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="154dp"
+        android:layout_height="35dp"
+        android:max="8"
+        android:progress="1"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="164dp"
+        android:layout_height="32dp"
+        android:max="4"
+        android:progress="1"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="137dp"
+        android:layout_height="22dp"
+        android:text="# of Players 4-12"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# of inputs"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="282dp" />
+</android.support.constraint.ConstraintLayout>
