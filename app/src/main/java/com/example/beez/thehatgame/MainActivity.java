@@ -8,27 +8,26 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class MainActivity extends Activity implements View.OnClickListener {
-    Button play, rules;
+    Button button_play, button_rules;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        play = findViewById(R.id.button);
-        play.setOnClickListener(this);
-        rules = findViewById(R.id.button2);
-        rules.setOnClickListener(this);
+        button_play = findViewById(R.id.button_play);
+        button_play.setOnClickListener(this);
+        button_play = findViewById(R.id.button_rules);
+        button_play.setOnClickListener(this);
 
     }
     public void onClick(View v){
-        switch(v.getId()){
-            case R.id.button:
-                Intent intent_play = new Intent(MainActivity.this,PlayActivity.class);
-                startActivity(intent_play);
+        Intent intent = new Intent();
+        switch(v.getId()) {
+            case R.id.button_play:
+                startActivity(new Intent(MainActivity.this,PlayActivity.class));
                 break;
-            case R.id.button2:
-                Intent intent_rules = new Intent(MainActivity.this,RulesActivity.class);
-                startActivity(intent_rules);
+            case R.id.button_rules:
+                startActivity(new Intent(MainActivity.this,RulesActivity.class));
                 break;
         }
     }

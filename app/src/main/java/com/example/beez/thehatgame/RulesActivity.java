@@ -1,9 +1,10 @@
 package com.example.beez.thehatgame;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class RulesActivity extends AppCompatActivity {
+public class RulesActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
