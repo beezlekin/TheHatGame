@@ -3,10 +3,10 @@ package com.example.beez.thehatgame;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button
+import android.widget.Button;
 
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
-    Button single, multi
+    Button single, multi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

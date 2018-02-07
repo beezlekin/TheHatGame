@@ -1,12 +1,13 @@
 package com.example.beez.thehatgame;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
     Button play, rules;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
