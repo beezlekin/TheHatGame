@@ -8,4 +8,9 @@
     <string name="Button_Send">Send</string>
     <string name="Text_Rules">The rules of the game go here. Does this multiline or do i need to use a different thing.</string>
     <string name="Text_passcode">Enter a passcode</string>
+    <string name="Text_seekplay">4</string>
+    <string name="Text_seekinput">3</string>
+    <string name="Text_names">Name</string>
+    <string name="Button_select">Select Name</string>
+    <string name="Text_inTitle">Single Player</string>
 </resources>
