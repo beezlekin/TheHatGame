@@ -20,18 +20,19 @@ public class GameActivity extends Activity implements View.OnClickListener {
     String names[];
     String b_opt[];
     int score [];
-    int nlen, time, points, round;
+    int nlen, time, round;
     boolean gametype, team; //maybe
     String s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().hide();
         setContentView(R.layout.activity_game);
         Bundle extras = getIntent().getExtras();
 
         time = 120000;
-        points = 0;
+        //points = 0;
         round = 1;
         score = new int [2];
         score[0] =0;
@@ -64,13 +65,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
             }
 
             public void onFinish() {
-                if (!team) {
-                    score[0] += points;
-                } else if (team) {
-                    score[1] += points;
-                }
                 button.setText(b_opt[3]);
-                points = 0;
+                //points = 0;
             }
         }.start();
 
@@ -110,7 +106,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.button:
                 String temp = button.getText().toString();
-                if (temp.equals(b_opt[0])||temp.equals(b_opt[1])) {
+                if (temp.equals(b_opt[0])||temp.equals(b_opt[1])) { // Team A/Team B
                     pickName();
                     //button.setText(b_opt[5]);
                     startTimer();
@@ -119,7 +115,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
                     pickName();
 
                 }
-                else if (temp.equals(b_opt[3])) {
+                else if (temp.equals(b_opt[3])) {  //times up
                     time=120000;
                     if (!team) {
                         button.setText(b_opt[1]);
@@ -136,17 +132,21 @@ public class GameActivity extends Activity implements View.OnClickListener {
                     System.out.println("Round");
                     if (team){
                         button.setText(b_opt[1]);
-                        team=true;
+                        //team=true;
                         System.out.println("team B");
                     }
                     else if (!team){
                         button.setText(b_opt[0]);
-                        team=false;
+                        //team=false;
                         System.out.println("team A");
                     }
                 }
                 else if (temp.equals(b_opt[5])) {
-                    points++;
+                    if (!team) {
+                        score[0] ++;
+                    } else if (team) {
+                        score[1] ++;
+                    }                    //points++;
                     //System.out.println("------------------POINTS: "+points+"------------------");
                     //System.out.println("------------------Score A: "+score[0]+"------------------");
                     //System.out.println("------------------Score B: "+score[1]+"------------------");
@@ -154,17 +154,13 @@ public class GameActivity extends Activity implements View.OnClickListener {
                     if(nlen<0){
                         round++;
                         if (round==4){
-                            if (!team) {
-                                score[0] += points;
-                            } else if (team) {
-                                score[1] += points;
-                            }
                             Intent intent= new Intent(getApplicationContext(),ScoreActivity.class);
                             intent.putExtra("scoreA",score[0]);
                             intent.putExtra("scoreB",score[1]);
                             //System.out.println("end------------------Score A: "+score[0]+"------------------");
                             //System.out.println("------------------Score B: "+score[1]+"------------------");
                             startActivity(intent);
+                            finish();
                         }
                         else {
                             if (round==3){

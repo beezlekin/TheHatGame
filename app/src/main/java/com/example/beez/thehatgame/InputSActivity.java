@@ -16,7 +16,7 @@ public class InputSActivity extends Activity implements View.OnClickListener {
     int players,inputs,count;
     Button selection,next_play,finish;
     EditText name_in;
-    TextView title;
+    TextView title,playnum;
     boolean gametype; //false = single player, true = multiplayer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class InputSActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_input);
         getActionBar().setDisplayHomeAsUpEnabled(false);
         getActionBar().setHomeButtonEnabled(false);
+        getActionBar().hide();
 
 
         gametype = getIntent().getBooleanExtra("gametype",false);
@@ -44,10 +45,12 @@ public class InputSActivity extends Activity implements View.OnClickListener {
 
         name_in = findViewById(R.id.t_names);
         title = findViewById(R.id.text_inTitle);
+        playnum = findViewById(R.id.text_playnum);
 
         if(gametype){
             title.setText("Multiplayer");
             finish.setVisibility(View.VISIBLE);
+            playnum.setVisibility(View.GONE);
         }
         else{
             title.setText("Single Player");
@@ -74,6 +77,7 @@ public class InputSActivity extends Activity implements View.OnClickListener {
                         Intent intent = new Intent(getApplicationContext(),GameActivity.class);
                         intent.putExtra("names",names);
                         startActivity(intent);
+                        finish();
                         //intent some shit and stuff
                     }
                     else if (temp%inputs==0&&!gametype){
@@ -97,6 +101,8 @@ public class InputSActivity extends Activity implements View.OnClickListener {
                 selection.setVisibility(View.VISIBLE);
                 name_in.setVisibility(View.VISIBLE);
                 name_in.setText("Name");
+                int a = count/inputs +1;
+                playnum.setText("Player "+a);
 
                 break;
             case R.id.t_names:

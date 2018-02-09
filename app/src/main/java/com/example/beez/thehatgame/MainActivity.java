@@ -13,6 +13,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getActionBar().hide();
 
         button_play = findViewById(R.id.button_play);
         button_play.setOnClickListener(this);

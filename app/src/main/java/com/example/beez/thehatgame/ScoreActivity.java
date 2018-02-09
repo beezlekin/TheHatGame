@@ -16,6 +16,7 @@ Button again, quit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().hide();
         setContentView(R.layout.activity_score);
         again = findViewById(R.id.button_again);
         again.setOnClickListener(this);
@@ -45,7 +46,7 @@ Button again, quit;
                 break;
             case R.id.button_quit:
                 finish();
-                System.exit(0);
+                //System.exit(0);
                 break;
         }
     }

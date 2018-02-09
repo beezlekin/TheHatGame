@@ -23,6 +23,7 @@ public class PlayActivity extends Activity implements View.OnClickListener,SeekB
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+        getActionBar().hide();
         extra_play = 4;
         extra_input = 3;
         extra_pcode = null;
@@ -66,6 +67,7 @@ public class PlayActivity extends Activity implements View.OnClickListener,SeekB
                 intent.putExtra("gametype",false);
                 intent.setClass(getApplicationContext(),InputSActivity.class);
                 startActivity(intent);
+                finish();
                 //startActivity(new Intent(PlayActivity.this,InputActivity.class));
                 break;
             case R.id.button_multi:
@@ -75,6 +77,7 @@ public class PlayActivity extends Activity implements View.OnClickListener,SeekB
                     //intent.putExtra("gametype",true); //possibly only intent after lobby screen, no idea how long these last for
                     //intent.setClass(getApplicationContext(),LobbyActivity.class);
                     //startActivity(intent);
+                    //finish();
                 }
                 else{
                     Animation shake = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
