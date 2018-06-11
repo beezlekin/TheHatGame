@@ -110,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:layout_marginTop="156dp"
         android:text="@string/Text_seekplay"
         app:layout_constraintBottom_toTopOf="@+id/seek_input"
@@ -122,9 +123,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="175dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="239dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Text_seekinput"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seek_input"
-        app:layout_constraintTop_toBottomOf="@+id/pcode" />
+        app:layout_constraintTop_toBottomOf="@+id/seek_play" />
 </android.support.constraint.ConstraintLayout>

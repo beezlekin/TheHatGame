@@ -2,6 +2,7 @@ package com.example.beez.thehatgame;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -23,6 +24,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
     int nlen, time, round;
     boolean gametype, team; //maybe
     String s;
+    MediaPlayer sound= null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +65,14 @@ public class GameActivity extends Activity implements View.OnClickListener {
         timer = new CountDownTimer(time, 10) {
             public void onTick(long tick) {
                 time = (int) (long) tick;
+                if(time%1000==0&&time!=0){
+                    soundmanager("clock");
+                }
             }
 
             public void onFinish() {
                 button.setText(b_opt[3]);
+                soundmanager("end");
                 //points = 0;
             }
         }.start();
@@ -110,12 +117,15 @@ public class GameActivity extends Activity implements View.OnClickListener {
                     pickName();
                     //button.setText(b_opt[5]);
                     startTimer();
+                    //sound.start();
+                    soundmanager("gong");
                 }
                 else if (temp.equals(b_opt[2])) {
                     pickName();
 
                 }
                 else if (temp.equals(b_opt[3])) {  //times up
+                    //end.start();
                     time=120000;
                     if (!team) {
                         button.setText(b_opt[1]);
@@ -178,6 +188,21 @@ public class GameActivity extends Activity implements View.OnClickListener {
                     }
                 }
                 break;
+        }
+    }
+    public void soundmanager (String t){
+        if (sound !=null){
+            sound.reset();
+            sound.release();
+        }
+        if (t=="clock"){
+            sound=MediaPlayer.create(this,R.raw.clock);
+        }
+        else if(t=="end"){
+            sound=MediaPlayer.create(this,R.raw.end);
+        }
+        else if (t== "gong"){
+            sound=MediaPlayer.create(this,R.raw.gong);
         }
     }
 }
