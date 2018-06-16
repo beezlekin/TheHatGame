@@ -107,7 +107,7 @@ public class InputSActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.t_names:
                 String st = name_in.getText().toString();
-                if (st.equals("Name")||st.length()<2){
+                if (st.equals("Name")||st.length()<1){ //make 2 one is better for debugging
                     name_in.setText("");
                 }
             case R.id.button_finish:

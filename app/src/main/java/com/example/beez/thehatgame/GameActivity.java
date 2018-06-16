@@ -120,7 +120,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
                     //sound.start();
                     soundmanager("gong");
                 }
-                else if (temp.equals(b_opt[2])) {
+                else if (temp.equals(b_opt[2])) {//next player
                     pickName();
 
                 }
@@ -137,21 +137,21 @@ public class GameActivity extends Activity implements View.OnClickListener {
                         }
 
                 }
-                else if (temp.equals(b_opt[4])) {
+                else if (temp.equals(b_opt[4])) {// round start
                     nlen=names.length-1;
                     System.out.println("Round");
                     if (team){
                         button.setText(b_opt[1]);
                         //team=true;
-                        System.out.println("team B");
+                        //System.out.println("team B");
                     }
                     else if (!team){
                         button.setText(b_opt[0]);
                         //team=false;
-                        System.out.println("team A");
+                        //System.out.println("team A");
                     }
                 }
-                else if (temp.equals(b_opt[5])) {
+                else if (temp.equals(b_opt[5])) {// name visual
                     if (!team) {
                         score[0] ++;
                     } else if (team) {
@@ -204,5 +204,6 @@ public class GameActivity extends Activity implements View.OnClickListener {
         else if (t== "gong"){
             sound=MediaPlayer.create(this,R.raw.gong);
         }
+        sound.start();
     }
 }
